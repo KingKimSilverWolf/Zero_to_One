@@ -1,15 +1,52 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import { ConvexProvider, ConvexReactClient } from 'convex/react';
+import { Link, Stack } from 'expo-router';
+import { TouchableOpacity } from 'react-native';
 
-export default function  RootLayoutNav() {
+const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!, {
+  unsavedChangesWarning: false,
+});
+
+// Stack navigation with two screens and one modal
+export default function RootLayoutNav() {
   return (
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+    <ConvexProvider client={convex}>
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#EEA217',
+          },
+          headerTintColor: '#fff',
+        }}>
+        <Stack.Screen
+          name="index"
+          options={{
+            headerTitle: 'My Chats',
+            headerRight: () => (
+              <Link href={'/(modal)/create'} asChild>
+                <TouchableOpacity>
+                  <Ionicons name="add" size={32} color="white" />
+                </TouchableOpacity>
+              </Link>
+            ),
+          }}
+        />
+        <Stack.Screen name="(chat)/[chatid]" options={{ headerTitle: 'Test' }} />
+        <Stack.Screen
+          name="(modal)/create"
+          options={{
+            headerTitle: 'Start a Chat',
+            presentation: 'modal',
+            headerLeft: () => (
+              <Link href={'/'} asChild>
+                <TouchableOpacity>
+                  <Ionicons name="close-outline" size={32} color="white" />
+                </TouchableOpacity>
+              </Link>
+            ),
+          }}
+        />
       </Stack>
+    </ConvexProvider>
   );
 }
