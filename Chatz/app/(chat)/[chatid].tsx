@@ -156,7 +156,8 @@ const Page = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F5EA',
+    padding: 20, // Enhanced padding for a cleaner look
+    backgroundColor: '#F0F8FF', // Lighter shade of blue for background, kept as is
   },
   inputContainer: {
     padding: 10,
@@ -169,13 +170,12 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.1,
     shadowRadius: 5,
-
     elevation: 3,
   },
   textInput: {
     flex: 1,
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: '#007AFF', // Updated to blue
     borderRadius: 5,
     paddingHorizontal: 10,
     minHeight: 40,
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   sendButton: {
-    backgroundColor: '#EEA217',
+    backgroundColor: '#007AFF', // Changed to blue
     borderRadius: 5,
     padding: 10,
     marginLeft: 10,
@@ -203,12 +203,12 @@ const styles = StyleSheet.create({
     maxWidth: '80%',
   },
   userMessageContainer: {
-    backgroundColor: '#791363',
+    backgroundColor: '#005F99', // A darker shade of blue for contrast
     alignSelf: 'flex-end',
   },
   otherMessageContainer: {
     alignSelf: 'flex-start',
-    backgroundColor: '#fff',
+    backgroundColor: '#E3F2FD', // A very light blue to differentiate from user messages
   },
   messageText: {
     fontSize: 16,

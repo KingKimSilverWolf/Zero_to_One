@@ -53,15 +53,15 @@ const Page = () => {
         {groups.map((group) => (
           <Link href={{ pathname: '/(chat)/[chatid]', params: { chatid: group._id } }} key={group._id.toString()} asChild>
             <TouchableOpacity style={styles.group}>
-              <Image source={{ uri: group.icon_url }} style={{ width: 50, height: 50 }} />
-              <View style={{ flex: 1 }}>
-                <Text>{group.name}</Text>
-                <Text style={{ color: '#888' }}>{group.description}</Text>
+              <Image source={{ uri: group.icon_url }} style={{ width: 50, height: 50, borderRadius: 25 }} />
+              <View style={{ flex: 1, marginLeft: 10 }}>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#007AFF' }}>{group.name}</Text>
+                <Text style={{ color: '#888', marginTop: 5 }}>{group.description}</Text>
               </View>
             </TouchableOpacity>
           </Link>
         ))}
-        <Text style={{ textAlign: 'center', margin: 10 }}>{greeting}</Text>
+        <Text style={{ textAlign: 'center', margin: 10, fontSize: 16, color: '#007AFF' }}>{greeting}</Text>
       </ScrollView>
       <Dialog.Container visible={visible}>
         <Dialog.Title>Username required</Dialog.Title>
@@ -77,11 +77,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#F8F5EA',
+    backgroundColor: '#F0F8FF', // Updated to a light shade of blue
   },
   group: {
     flexDirection: 'row',
-    gap: 10,
     alignItems: 'center',
     backgroundColor: '#fff',
     padding: 10,
@@ -90,12 +89,13 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 1,
+      height: 2,
     },
     shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
+    shadowRadius: 6,
+    elevation: 4,
   },
 });
+
 
 export default Page;

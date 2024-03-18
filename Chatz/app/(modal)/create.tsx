@@ -39,22 +39,26 @@ const Page = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F5EA',
+    backgroundColor: '#F0F8FF', // A light shade of blue for the background
     padding: 10,
   },
   label: {
     marginVertical: 10,
+    color: '#007AFF', // Added to ensure labels match the blue theme
+    fontSize: 18, // Slightly larger for readability
+    fontWeight: 'bold', // Making sure it stands out
   },
   textInput: {
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: '#007AFF', // Switching to blue for consistency
     borderRadius: 5,
     paddingHorizontal: 10,
     minHeight: 40,
     backgroundColor: '#fff',
+    fontSize: 16, // Increased font size for better readability
   },
   button: {
-    backgroundColor: '#EEA217',
+    backgroundColor: '#007AFF', // Updated to a pleasing shade of blue
     borderRadius: 5,
     padding: 10,
     marginVertical: 10,
@@ -64,9 +68,10 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 16, // Kept the same for readability
     fontWeight: 'bold',
   },
 });
+
 
 export default Page;
