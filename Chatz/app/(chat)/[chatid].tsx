@@ -8,6 +8,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 
+// AI
+
+import * as dotenv from 'dotenv';
+import * as os from 'os';
+
 const Page = () => {
   const { chatid } = useLocalSearchParams();
   const [newMessage, setNewMessage] = useState('');
