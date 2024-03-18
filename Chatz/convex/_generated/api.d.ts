@@ -16,6 +16,7 @@ import type {
 } from "convex/server";
 import type * as greeting from "../greeting.js";
 import type * as groups from "../groups.js";
+import type * as http from "../http.js";
 import type * as messages from "../messages.js";
 
 /**
@@ -29,6 +30,7 @@ import type * as messages from "../messages.js";
 declare const fullApi: ApiFromModules<{
   greeting: typeof greeting;
   groups: typeof groups;
+  http: typeof http;
   messages: typeof messages;
 }>;
 export declare const api: FilterApi<
